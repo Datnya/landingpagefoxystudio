@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foxy Studio | Servicios</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/style.css">
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body class="page-servicios">
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="navbar-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="logo%20transparente.png" alt="Foxy Studio Logo" class="logo-img">
+                </a>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="nosotros.html" class="nav-link">Nosotros</a>
+                <a href="servicios.html" class="nav-link active-link">Servicios</a>
+                <a href="contacto.html" class="nav-link">Contacto</a>
+            </nav>
+            <div class="nav-actions">
+                <div class="nav-socials">
+                    <a href="https://www.instagram.com/foxystudio.digital/?hl=es" target="_blank"><i data-feather="instagram"></i></a>
+                    <a href="#" target="_blank"><i data-feather="facebook"></i></a>
+                    <a href="#" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path><path d="M15 8a4 4 0 1 0 0-8"></path></svg></a>
+                </div>
+                <a href="contacto.html" class="btn-primary">Empezar Proyecto</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="page-top-padding">
+        <section class="home-services">
+            <div class="home-services-header reveal" style="text-align: left; max-width: 900px;">
+                <div class="section-badge" style="margin-bottom: 2rem;">¿Qué Hacemos?</div>
+                <h1 class="hero-title" style="font-size: clamp(2.5rem, 4.5vw, 4.5rem);">Soluciones digitales integrales: de la identidad a la optimización.</h1>
+            </div>
+            
+            <div class="cards-grid">
+                <!-- Card 1 -->
+                <a href="servicio-detalle.html#web" class="service-dyn-card reveal">
+                    <div class="card-icon"><i data-feather="layout"></i></div>
+                    <h3>Páginas Web y Plataformas</h3>
+                    <p>Desarrollamos interfaces responsivas, dinámicas y ultra-rápidas.</p>
+                    <span class="card-link">Saber Más →</span>
+                </a>
+                <!-- Card 2 -->
+                <a href="servicio-detalle.html#software" class="service-dyn-card reveal">
+                    <div class="card-icon"><i data-feather="terminal"></i></div>
+                    <h3>Software a Medida</h3>
+                    <p>Sistemas robustos que resuelven problemas específicos de tu empresa.</p>
+                    <span class="card-link">Saber Más →</span>
+                </a>
+                <!-- Card 3 -->
+                <a href="servicio-detalle.html#ia" class="service-dyn-card reveal">
+                    <div class="card-icon"><i data-feather="cpu"></i></div>
+                    <h3>Optimización con IA</h3>
+                    <p>Implementación de agentes inteligentes y automatización de flujos de trabajo.</p>
+                    <span class="card-link">Saber Más →</span>
+                </a>
+                <!-- Card 4 -->
+                <a href="servicio-detalle.html#modernizacion" class="service-dyn-card reveal">
+                    <div class="card-icon"><i data-feather="refresh-cw"></i></div>
+                    <h3>Modernización Tech</h3>
+                    <p>Actualización de webs existentes con nuevos frameworks UI y backend.</p>
+                    <span class="card-link">Saber Más →</span>
+                </a>
+                <!-- Card 5 -->
+                <a href="servicio-detalle.html#branding" class="service-dyn-card reveal">
+                    <div class="card-icon"><i data-feather="feather"></i></div>
+                    <h3>Branding Corporativo</h3>
+                    <p>Creación de identidad visual impactante y manual de marca corporativa.</p>
+                    <span class="card-link">Saber Más →</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="logo%20transparente.png" alt="Foxy Studio Logo">
+            </div>
+            <div class="footer-contact-info" style="color: var(--color-text-muted); text-align: center;">
+                <p>contacto.foxystudio@gmail.com | +51 912424331</p>
+                <p>&copy; <span id="year"></span> Foxy Studio. Todos los derechos reservados.</p>
+            </div>
+            <div class="social-links">
+                <a href="https://www.instagram.com/foxystudio.digital/?hl=es" target="_blank">Instagram</a>
+                <a href="#!">Facebook</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="src/main.js"></script>
+    <script>
+      feather.replace();
+    </script>
+</body>
+</html>

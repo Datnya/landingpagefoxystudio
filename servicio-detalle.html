@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle de Servicio | Foxy Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/style.css">
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body class="page-detalle">
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="navbar-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="logo%20transparente.png" alt="Foxy Studio Logo" class="logo-img">
+                </a>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="nosotros.html" class="nav-link">Nosotros</a>
+                <a href="servicios.html" class="nav-link">Servicios</a>
+                <a href="contacto.html" class="nav-link">Contacto</a>
+            </nav>
+            <div class="nav-actions">
+                <div class="nav-socials">
+                    <a href="https://www.instagram.com/foxystudio.digital/?hl=es" target="_blank"><i data-feather="instagram"></i></a>
+                    <a href="#" target="_blank"><i data-feather="facebook"></i></a>
+                    <a href="#" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path><path d="M15 8a4 4 0 1 0 0-8"></path></svg></a>
+                </div>
+                <a href="contacto.html" class="btn-primary">Empezar Proyecto</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="page-top-padding">
+        <!-- Dyn Content -->
+        <section class="detalle-header">
+            <div class="container reveal">
+                <div class="back-link"><a href="servicios.html">← Volver a Servicios</a></div>
+                <div class="detalle-icon" id="dyn-icon"><i data-feather="box"></i></div>
+                <h1 class="hero-title" id="dyn-title">Cargando...</h1>
+                <h3 id="dyn-hook" style="color: var(--color-accent); font-size: clamp(1.4rem, 2.5vw, 1.8rem); max-width: 800px; margin: 1.5rem auto;"></h3>
+                <p class="hero-subtitle" id="dyn-subtitle"></p>
+            </div>
+        </section>
+
+        <section class="detalle-body container reveal">
+            <div class="detalle-content">
+                <h2>¿Por qué elegir este servicio?</h2>
+                <p id="dyn-desc1" style="line-height: 1.8; margin-bottom: 2rem; font-size: 1.1rem; color: var(--color-text-main);"></p>
+                
+                <h3 style="margin-top: 2.5rem; margin-bottom: 1.5rem; font-size: 1.5rem; color: var(--color-accent); font-weight: 600;">Características Clave</h3>
+                <ul id="dyn-features" style="list-style: none; padding: 0;">
+                    <!-- Features populated dynamically -->
+                </ul>
+
+                <h2 style="margin-top: 4rem;" id="dyn-method-title">Metodología de Trabajo</h2>
+                <div class="methodology-grid" id="dyn-method-grid">
+                    <!-- Steps populated dynamically -->
+                </div>
+
+                <div class="detalle-cta" style="margin-top: 5rem; text-align:center; padding: 4rem; background: var(--color-surface); border-radius: 20px; border: 1px solid rgba(255,255,255,0.05);">
+                    <h2>¿Listo para empezar?</h2>
+                    <p style="margin-bottom: 2rem; color: var(--color-text-muted);">Agenda una asesoría gratuita hoy mismo.</p>
+                    <a href="contacto.html" class="btn-primary">Cotizar Proyecto</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content" style="margin-top: 4rem;">
+            <div class="footer-logo">
+                <img src="logo%20transparente.png" alt="Foxy Studio Logo">
+            </div>
+            <div class="footer-contact-info" style="color: var(--color-text-muted); text-align: center;">
+                <p>contacto.foxystudio@gmail.com | +51 912424331</p>
+                <p>&copy; <span id="year"></span> Foxy Studio. Todos los derechos reservados.</p>
+            </div>
+            <div class="social-links">
+                <a href="https://www.instagram.com/foxystudio.digital/?hl=es" target="_blank">Instagram</a>
+                <a href="#!">Facebook</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="src/main.js"></script>
+    <script>
+        const servicesData = {
+            web: {
+                title: "Páginas Web y Plataformas Digitales",
+                hook: "Arquitectura Digital que Impulsa Conversiones.",
+                icon: "layout",
+                subtitle: "Sitios de alto rendimiento que convierten visitantes en clientes.",
+                desc: "No creamos simples sitios web; construimos ecosistemas digitales optimizados para el crecimiento. Fusionamos el diseño de vanguardia con arquitecturas robustas en Next.js para ofrecer una experiencia de usuario fluida y ultra rápida.",
+                features: [
+                    "Diseño UI/UX centrado en el usuario.",
+                    "Velocidad de carga optimizada (Core Web Vitals).",
+                    "Estructura escalable y SEO-friendly."
+                ],
+                methodologyTitle: "UX-Performance Loop",
+                methodologySteps: [
+                    { name: "Exploración de Usuario", desc: "Identificamos el comportamiento de tu cliente ideal." },
+                    { name: "Prototipado de Alta Fidelidad", desc: "Diseño visual antes de una sola línea de código." },
+                    { name: "Desarrollo Ágil", desc: "Implementación con tecnologías modernas (Next.js/Vercel)." },
+                    { name: "Test de Conversión", desc: "Verificamos que cada botón cumpla su objetivo antes del lanzamiento." }
+                ]
+            },
+            software: {
+                title: "Software Adaptado (Custom Dev)",
+                hook: "Software que se Adapta a tu Negocio, No al Revés.",
+                icon: "terminal",
+                subtitle: "Soluciones a medida para problemas específicos del negocio.",
+                desc: "Si los sistemas genéricos limitan tu crecimiento, desarrollamos herramientas personalizadas. Desde CRMs internos hasta plataformas complejas, creamos software que soluciona cuellos de botella operativos de forma intuitiva.",
+                features: [
+                    "Desarrollo modular y escalable.",
+                    "Integraciones con APIs de terceros.",
+                    "Seguridad de datos de nivel empresarial."
+                ],
+                methodologyTitle: "Modular Growth Blueprint",
+                methodologySteps: [
+                    { name: "Diagnóstico Operativo", desc: "Inmersión total en los procesos de tu empresa." },
+                    { name: "Mapa de Funcionalidades", desc: "Definición de requerimientos críticos y secundarios." },
+                    { name: "Arquitectura de Datos", desc: "Estructuración lógica para garantizar estabilidad." },
+                    { name: "Despliegue Evolutivo", desc: "Lanzamiento por módulos para no detener tu operación." }
+                ]
+            },
+            ia: {
+                title: "Optimización de Procesos con IA",
+                hook: "Automatización Inteligente: El Futuro de la Eficiencia.",
+                icon: "cpu",
+                subtitle: "Eficiencia operativa y ahorro de tiempo mediante automatización inteligente.",
+                desc: "Ayudamos a tu equipo a dejar de lado las tareas repetitivas para enfocarse en lo estratégico. Implementamos soluciones de IA que analizan datos, automatizan respuestas y optimizan flujos de trabajo en tiempo real.",
+                features: [
+                    "Automatización de atención al cliente (Agentes IA).",
+                    "Procesamiento inteligente de documentos.",
+                    "Análisis predictivo para toma de decisiones."
+                ],
+                methodologyTitle: "The AI Infiltration",
+                methodologySteps: [
+                    { name: "Auditoría de Ineficiencias", desc: "Detectamos dónde pierdes más tiempo y dinero." },
+                    { name: "Selección de Modelo", desc: "Elegimos la IA que mejor se adapte a tu necesidad específica." },
+                    { name: "Entrenamiento y Ajuste", desc: "Adaptamos la IA con tus datos y tono de voz corporativo." },
+                    { name: "Monitoreo de Impacto", desc: "Medición del ROI y ajuste fino del algoritmo." }
+                ]
+            },
+            modernizacion: {
+                title: "Potenciación y Optimización Web con IA",
+                hook: "Evoluciona tu Web Actual al Siguiente Nivel.",
+                icon: "refresh-cw",
+                subtitle: "Modernizar lo que ya tienes sin empezar de cero.",
+                desc: "Si ya tienes una plataforma pero se siente lenta o anticuada, la transformamos. Aplicamos nuevas tecnologías e integramos capas de Inteligencia Artificial para que tu web actual sea competitiva en el mercado de 2026.",
+                features: [
+                    "Refactorización de código para mayor velocidad.",
+                    "Inyección de funciones inteligentes (buscadores semánticos, recomendaciones).",
+                    "Mejora radical de la interfaz visual."
+                ],
+                methodologyTitle: "Digital Retrofitting",
+                methodologySteps: [
+                    { name: "Análisis de Salud Técnica", desc: "Evaluamos el estado actual del código y SEO." },
+                    { name: "Inyección de Tecnología", desc: "Sustituimos componentes antiguos por librerías modernas." },
+                    { name: "Capa IA", desc: "Implementamos funcionalidades inteligentes sobre la base existente." },
+                    { name: "Optimización Final", desc: "Pulido de estética y tiempos de respuesta." }
+                ]
+            },
+            branding: {
+                title: "Branding Corporativo (Nuevas Empresas)",
+                hook: "Identidades Visuales que Definen el Mañana.",
+                icon: "feather",
+                subtitle: "Identidad visual sólida para irrumpir con fuerza en el mercado.",
+                desc: "Para una empresa nueva, el branding no es un logo, es su reputación visual. Construimos identidades minimalistas, modernas y poderosas que aseguran que tu marca sea recordada desde el primer impacto.",
+                features: [
+                    "Logotipo versátil y atemporal.",
+                    "Sistema visual completo (paleta, tipografía, estilo fotográfico).",
+                    "Manual de identidad y aplicaciones digitales."
+                ],
+                methodologyTitle: "Visual DNA Discovery",
+                methodologySteps: [
+                    { name: "Inmersión de Concepto", desc: "Entendemos los valores y la psicología de tu marca." },
+                    { name: "Territorio Visual", desc: "Definimos el espacio estético donde tu marca dominará." },
+                    { name: "Arquitectura de Marca", desc: "Diseño de logotipos y sistemas gráficos coherentes." },
+                    { name: "Asset Delivery", desc: "Entrega de todas las herramientas listas para lanzarte al mercado." }
+                ]
+            }
+        };
+
+        // Populate content dynamically based on URL parameter
+        let serviceId = window.location.hash.substring(1);
+        if(!serviceId) {
+            const urlParams = new URLSearchParams(window.location.search);
+            serviceId = urlParams.get('id');
+        }
+        
+        if(serviceId && servicesData[serviceId]) {
+            const data = servicesData[serviceId];
+            document.getElementById('dyn-title').textContent = data.title;
+            const dynHook = document.getElementById('dyn-hook');
+            if(dynHook) dynHook.textContent = `"${data.hook}"`;
+            document.getElementById('dyn-subtitle').textContent = data.subtitle;
+            document.getElementById('dyn-desc1').textContent = data.desc;
+            document.getElementById('dyn-icon').innerHTML = `<i data-feather="${data.icon}"></i>`;
+            
+            // Populate Features
+            const featuresList = document.getElementById('dyn-features');
+            featuresList.innerHTML = '';
+            data.features.forEach(f => {
+                const li = document.createElement('li');
+                li.style.marginBottom = '1.2rem';
+                li.style.display = 'flex';
+                li.style.alignItems = 'center';
+                li.style.gap = '15px';
+                li.innerHTML = `<i data-feather="check-circle" style="color: var(--color-accent); width: 24px; height: 24px; flex-shrink: 0;"></i> <span style="font-size: 1.1rem;">${f}</span>`;
+                featuresList.appendChild(li);
+            });
+
+            // Populate Methodology
+            document.getElementById('dyn-method-title').textContent = `Metodología: ${data.methodologyTitle}`;
+            const methodGrid = document.getElementById('dyn-method-grid');
+            methodGrid.innerHTML = '';
+            data.methodologySteps.forEach((step, index) => {
+                const stepNum = String(index + 1).padStart(2, '0');
+                const div = document.createElement('div');
+                div.className = 'method-step';
+                div.innerHTML = `
+                    <div class="step-num">${stepNum}</div>
+                    <h4 style="margin-top: 1.5rem;">${step.name}</h4>
+                    <p style="margin-top: 0.5rem; font-size: 0.95rem; color: var(--color-text-muted);">${step.desc}</p>
+                `;
+                methodGrid.appendChild(div);
+            });
+        } else {
+            document.getElementById('dyn-title').textContent = "Servicio No Encontrado";
+        }
+
+        // Delay replacement slightly to ensure DOM is ready with dynamically created nodes
+        setTimeout(() => feather.replace(), 50);
+    </script>
+</body>
+</html>

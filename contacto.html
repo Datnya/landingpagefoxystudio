@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foxy Studio | Contacto</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/style.css">
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body class="page-contacto">
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="navbar-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="logo%20transparente.png" alt="Foxy Studio Logo" class="logo-img">
+                </a>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="nosotros.html" class="nav-link">Nosotros</a>
+                <a href="servicios.html" class="nav-link">Servicios</a>
+                <a href="contacto.html" class="nav-link active-link">Contacto</a>
+            </nav>
+            <div class="nav-actions">
+                <div class="nav-socials">
+                    <a href="https://www.instagram.com/foxystudio.digital/?hl=es" target="_blank"><i data-feather="instagram"></i></a>
+                    <a href="#" target="_blank"><i data-feather="facebook"></i></a>
+                    <a href="#" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path><path d="M15 8a4 4 0 1 0 0-8"></path></svg></a>
+                </div>
+                <a href="contacto.html" class="btn-primary">Empezar Proyecto</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="page-top-padding">
+        <!-- Contact Section -->
+        <section class="contact" style="padding-top: 5rem;">
+            <div class="contact-container reveal">
+                <div class="contact-info">
+                    <h1 class="hero-title" style="font-size: 3.5rem; margin-bottom:1rem;">Trabajemos <span class="text-accent">Juntos</span></h1>
+                    <p>¿Estás listo para darle a tu marca el diseño premium que merece? Completa el formulario y nos contactaremos a la brevedad.</p>
+                    
+                    <div class="contact-details" style="margin-top: 3rem;">
+                        <div class="contact-row">
+                            <span class="icon"><i data-feather="phone"></i></span>
+                            <a href="tel:+51912424331">+51 912424331</a>
+                        </div>
+                        <div class="contact-row" style="margin-top: 1rem;">
+                            <span class="icon"><i data-feather="mail"></i></span>
+                            <a href="mailto:contacto.foxystudio@gmail.com">contacto.foxystudio@gmail.com</a>
+                        </div>
+                        <div class="contact-row" style="margin-top: 1rem;">
+                            <span class="icon"><i data-feather="instagram"></i></span>
+                            <a href="https://www.instagram.com/foxystudio.digital/?hl=es" target="_blank">@foxystudio.digital</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Nombre Completo</label>
+                        <input type="text" id="name" placeholder="Ej. Juan Pérez" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico</label>
+                        <input type="email" id="email" placeholder="tu@empresa.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Servicio de Interés</label>
+                        <select id="service" required>
+                            <option value="">Selecciona una opción</option>
+                            <option value="web">Plataformas Web</option>
+                            <option value="software">Software a Medida</option>
+                            <option value="ia">Integración IA</option>
+                            <option value="modernizacion">Modernización</option>
+                            <option value="branding">Branding</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensaje / Detalles del Proyecto</label>
+                        <textarea id="message" rows="5" placeholder="Cuéntanos más sobre cómo podemos ayudarte..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary w-full" style="padding: 1.2rem; font-size:1.1rem;">Enviar Detalles del Proyecto</button>
+                    <div id="formStatus" class="form-status"></div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="logo%20transparente.png" alt="Foxy Studio Logo">
+            </div>
+            <div class="footer-contact-info" style="color: var(--color-text-muted); text-align: center;">
+                <p>contacto.foxystudio@gmail.com | +51 912424331</p>
+                <p>&copy; <span id="year"></span> Foxy Studio. Todos los derechos reservados.</p>
+            </div>
+            <div class="social-links">
+                <a href="https://www.instagram.com/foxystudio.digital/?hl=es" target="_blank">Instagram</a>
+                <a href="#!">Facebook</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="src/main.js"></script>
+    <script>
+      feather.replace();
+    </script>
+</body>
+</html>
