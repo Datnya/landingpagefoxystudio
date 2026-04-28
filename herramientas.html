@@ -65,41 +65,74 @@
 
         <!-- ==================== REGISTRATION GATE ==================== -->
         <section class="registration-gate" id="registrationGate">
-            <div class="registration-container reveal">
-                <div class="registration-card">
-                    <div class="registration-icon">
-                        <i data-feather="user-plus" style="width:48px;height:48px;"></i>
-                    </div>
-                    <h2>Regístrate para acceder</h2>
-                    <p class="text-muted" style="margin-bottom:2rem;">Completa este formulario rápido y accede a todas nuestras herramientas gratuitas.</p>
+            <div class="registration-container reveal" style="max-width: 1100px;">
+                <div class="registration-split" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); background: var(--color-surface); border: 1px solid rgba(240, 90, 34, 0.3); border-radius: 24px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.3);">
                     
-                    <form id="toolsRegistrationForm" class="tools-reg-form">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="regName">Nombre y Apellido *</label>
-                                <input type="text" id="regName" placeholder="Ej. Juan Pérez" required>
+                    <!-- LADO IZQUIERDO: FORMULARIO -->
+                    <div class="registration-form-side" style="padding: 3rem; text-align: left;">
+                        <div class="registration-icon" style="color: var(--color-accent); margin-bottom: 1.5rem;">
+                            <i data-feather="user-plus" style="width:40px;height:40px;"></i>
+                        </div>
+                        <h2 style="font-size: 2rem; margin-bottom: 0.5rem;">Regístrate para acceder</h2>
+                        <p class="text-muted" style="margin-bottom:2rem;">Completa este formulario y accede a todas nuestras herramientas gratuitas al instante.</p>
+                        
+                        <form id="toolsRegistrationForm" class="tools-reg-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="regName">Nombre y Apellido *</label>
+                                    <input type="text" id="regName" placeholder="Ej. Juan Pérez" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="regCompany">Nombre de Empresa *</label>
+                                    <input type="text" id="regCompany" placeholder="Ej. Mi Empresa" required>
+                                </div>
                             </div>
                             <div class="form-group">
-                                <label for="regCompany">Nombre de tu Empresa *</label>
-                                <input type="text" id="regCompany" placeholder="Ej. Mi Empresa S.A.C." required>
+                                <label for="regEmail">Correo Electrónico *</label>
+                                <input type="email" id="regEmail" placeholder="tu@empresa.com" required>
+                            </div>
+                            <div class="form-group checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="regNewsletter">
+                                    <span class="checkmark"></span>
+                                    <span>Acepto recibir novedades de Foxy Studio</span>
+                                </label>
+                            </div>
+                            <button type="submit" class="btn-primary w-full" style="padding:1rem; font-size:1.05rem;">
+                                <i data-feather="unlock" style="width:18px;height:18px; vertical-align:middle; margin-right:8px;"></i>
+                                Acceder a las herramientas
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- LADO DERECHO: BENEFICIOS -->
+                    <div class="registration-benefits-side" style="background: linear-gradient(135deg, rgba(240, 90, 34, 0.1), rgba(17, 17, 17, 0.8)); padding: 3rem; border-left: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column; justify-content: center; text-align: left;">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 2.5rem;">¿Qué herramientas desbloquearás?</h3>
+                        
+                        <div class="benefit-item" style="margin-bottom: 2rem; display: flex; gap: 1rem;">
+                            <div style="color: var(--color-accent);"><i data-feather="clipboard" style="width:28px;height:28px;"></i></div>
+                            <div>
+                                <h4 style="margin-bottom: 0.4rem; font-size: 1.1rem;">Diagnóstico Rápido</h4>
+                                <p class="text-muted" style="font-size: 0.95rem; line-height: 1.5;">Cuestionario interactivo para evaluar el estado actual de tu web, infraestructura y procesos operativos.</p>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="regEmail">Correo Electrónico *</label>
-                            <input type="email" id="regEmail" placeholder="tu@empresa.com" required>
+
+                        <div class="benefit-item" style="margin-bottom: 2rem; display: flex; gap: 1rem;">
+                            <div style="color: var(--color-accent);"><i data-feather="cpu" style="width:28px;height:28px;"></i></div>
+                            <div>
+                                <h4 style="margin-bottom: 0.4rem; font-size: 1.1rem;">Análisis Automatizado con IA</h4>
+                                <p class="text-muted" style="font-size: 0.95rem; line-height: 1.5;">Ingresa tu link y nuestra IA te dará 10 puntos críticos de mejora inmediata para captar más clientes.</p>
+                            </div>
                         </div>
-                        <div class="form-group checkbox-group">
-                            <label class="checkbox-label">
-                                <input type="checkbox" id="regNewsletter">
-                                <span class="checkmark"></span>
-                                <span>Acepto recibir novedades y promociones de Foxy Studio</span>
-                            </label>
+
+                        <div class="benefit-item" style="display: flex; gap: 1rem;">
+                            <div style="color: var(--color-accent);"><i data-feather="trending-up" style="width:28px;height:28px;"></i></div>
+                            <div>
+                                <h4 style="margin-bottom: 0.4rem; font-size: 1.1rem;">Resultados Accionables</h4>
+                                <p class="text-muted" style="font-size: 0.95rem; line-height: 1.5;">Recomendaciones claras y precisas, pensadas para aumentar tus conversiones sin rodeos.</p>
+                            </div>
                         </div>
-                        <button type="submit" class="btn-primary w-full" style="padding:1rem; font-size:1.05rem;">
-                            <i data-feather="unlock" style="width:18px;height:18px; vertical-align:middle; margin-right:8px;"></i>
-                            Acceder a las herramientas
-                        </button>
-                    </form>
+                    </div>
                 </div>
             </div>
         </section>
