@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foxy Studio | Inicio</title>
-    <meta name="description" content="Foxy Studio - Agencia premium de desarrollo y diseño web.">
+    <title>Foxy Studio | Desarrollo Web & Automatización para Empresas</title>
+    <meta name="description" content="Software propio, sin suscripciones, con resultados que puedas medir. Modernización web, automatización operativa y paquetes completos para tu empresa.">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="src/style.css">
     <!-- Feather Icons for fast vector SVGs -->
     <script src="https://unpkg.com/feather-icons"></script>
@@ -26,6 +26,7 @@
                 <a href="index.html" class="nav-link active-link">Inicio</a>
                 <a href="nosotros.html" class="nav-link">Nosotros</a>
                 <a href="servicios.html" class="nav-link">Servicios</a>
+                <a href="herramientas.html" class="nav-link">Herramientas Gratuitas</a>
                 <a href="contacto.html" class="nav-link">Contacto</a>
             </nav>
             <div class="nav-actions">
@@ -36,29 +37,53 @@
                 </div>
                 <a href="contacto.html" class="btn-primary">Empezar Proyecto</a>
             </div>
+            <!-- Mobile menu button -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+                <i data-feather="menu"></i>
+            </button>
+        </div>
+        <!-- Mobile nav overlay -->
+        <div class="mobile-nav" id="mobileNav">
+            <a href="index.html" class="mobile-nav-link active-link">Inicio</a>
+            <a href="nosotros.html" class="mobile-nav-link">Nosotros</a>
+            <a href="servicios.html" class="mobile-nav-link">Servicios</a>
+            <a href="herramientas.html" class="mobile-nav-link">Herramientas Gratuitas</a>
+            <a href="contacto.html" class="mobile-nav-link">Contacto</a>
+            <a href="contacto.html" class="btn-primary" style="margin-top:1rem;">Empezar Proyecto</a>
         </div>
     </header>
 
     <main>
-        <!-- Hero Section -->
+        <!-- ==================== HERO SECTION ==================== -->
         <section class="hero">
             <div class="hero-container">
                 <div class="hero-content reveal">
+                    <div class="section-badge" style="margin-bottom:1.5rem;">Agencia de Desarrollo & Automatización</div>
                     <h1 class="hero-title" style="font-size: clamp(2.5rem, 4vw, 4.5rem);">
                         Creamos lo que tu marca <span class="text-accent">proyecta</span>
                     </h1>
-                    <p class="hero-subtitle" style="font-size: 1.5rem; color: #fff;">
-                        y desarrollamos lo que tu empresa necesita para crecer.
+                    <p class="hero-subtitle" style="font-size: 1.15rem; color: rgba(255,255,255,0.75); max-width:640px; line-height:1.8;">
+                        Empresas como la tuya están pasando de procesos manuales a sistemas 
+                        automatizados que funcionan sin intervención. Software propio. Sin suscripciones. 
+                        Con resultados que puedas medir.
                     </p>
                     <div class="hero-buttons">
-                        <a href="servicios.html" class="btn-primary">Ver Servicios</a>
-                        <a href="contacto.html" class="btn-secondary">Contáctanos</a>
+                        <a href="#ofertas" class="btn-primary">Ver Paquetes</a>
+                        <a href="herramientas.html" class="btn-secondary">Diagnóstico Gratuito</a>
                     </div>
                 </div>
             </div>
+            <!-- Animated particles -->
+            <div class="hero-particles">
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+            </div>
         </section>
 
-        <!-- Stats Bar -->
+        <!-- ==================== STATS BAR ==================== -->
         <section class="stats-cards-bar">
             <div class="stats-cards-container">
                 <div class="stat-glass-card reveal">
@@ -73,55 +98,198 @@
                 </div>
                 <div class="stat-glass-card reveal">
                     <div class="stat-icon"><i data-feather="award"></i></div>
-                    <h3 class="stat-number">UI/UX</h3>
-                    <p class="stat-label">Premium</p>
+                    <h3 class="stat-number">$0</h3>
+                    <p class="stat-label">Suscripciones</p>
                 </div>
             </div>
         </section>
 
-        <!-- Dynamic Services Cards Section -->
-        <section class="home-services">
-            <div class="home-services-header reveal">
-                <h2 class="section-title">Nuestras Soluciones Digitales</h2>
-                <p class="text-muted">Potencia tu empresa con nuestro ecosistema de servicios premium.</p>
+        <!-- ==================== PROBLEMA SECTION ==================== -->
+        <section class="problem-section" id="problema">
+            <div class="problem-container reveal">
+                <div class="section-badge">El Problema</div>
+                <h2 class="section-title">¿Tu empresa sigue dependiendo de <span class="text-accent">procesos manuales</span>?</h2>
+                <p class="section-subtitle" style="max-width:700px; margin: 0 auto 3rem;">
+                    La mayoría de empresas pierden tiempo, dinero y clientes por no tener sistemas digitales eficientes. 
+                    Si alguno de estos te suena familiar, necesitas actuar ahora.
+                </p>
+                <div class="problem-grid">
+                    <div class="problem-card reveal">
+                        <div class="problem-icon"><i data-feather="alert-triangle"></i></div>
+                        <h4>Web que no convierte</h4>
+                        <p>Tu página existe pero no genera leads ni ventas. Los visitantes llegan y se van sin contactarte.</p>
+                    </div>
+                    <div class="problem-card reveal">
+                        <div class="problem-icon"><i data-feather="clock"></i></div>
+                        <h4>Tareas repetitivas</h4>
+                        <p>Tu equipo pierde +20 horas semanales en trabajo administrativo que podría automatizarse.</p>
+                    </div>
+                    <div class="problem-card reveal">
+                        <div class="problem-icon"><i data-feather="dollar-sign"></i></div>
+                        <h4>Suscripciones costosas</h4>
+                        <p>Pagas por 5+ herramientas SaaS que no se integran entre sí y generan datos dispersos.</p>
+                    </div>
+                    <div class="problem-card reveal">
+                        <div class="problem-icon"><i data-feather="trending-down"></i></div>
+                        <h4>Crecimiento estancado</h4>
+                        <p>Sabes que podrías escalar, pero tu infraestructura digital te limita en cada paso.</p>
+                    </div>
+                </div>
             </div>
-            
-            <div class="cards-grid">
-                <!-- Card 1 -->
-                <a href="servicio-detalle.html#web" class="service-dyn-card reveal">
-                    <div class="card-icon"><i data-feather="layout"></i></div>
-                    <h3>Páginas Web y Plataformas</h3>
-                    <p>Desarrollamos interfaces responsivas, dinámicas y ultra-rápidas.</p>
-                    <span class="card-link">Explorar →</span>
-                </a>
-                <!-- Card 2 -->
-                <a href="servicio-detalle.html#software" class="service-dyn-card reveal">
-                    <div class="card-icon"><i data-feather="terminal"></i></div>
-                    <h3>Software a Medida</h3>
-                    <p>Sistemas robustos que resuelven problemas específicos.</p>
-                    <span class="card-link">Explorar →</span>
-                </a>
-                <!-- Card 3 -->
-                <a href="servicio-detalle.html#ia" class="service-dyn-card reveal">
-                    <div class="card-icon"><i data-feather="cpu"></i></div>
-                    <h3>Optimización con IA</h3>
-                    <p>Agentes inteligentes y automatización de flujos de trabajo.</p>
-                    <span class="card-link">Explorar →</span>
-                </a>
-                <!-- Card 4 -->
-                <a href="servicio-detalle.html#modernizacion" class="service-dyn-card reveal">
-                    <div class="card-icon"><i data-feather="refresh-cw"></i></div>
-                    <h3>Modernización Tech</h3>
-                    <p>Actualización de webs con nuevos frameworks UI y backend.</p>
-                    <span class="card-link">Explorar →</span>
-                </a>
-                <!-- Card 5 -->
-                <a href="servicio-detalle.html#branding" class="service-dyn-card reveal">
-                    <div class="card-icon"><i data-feather="feather"></i></div>
-                    <h3>Branding Corporativo</h3>
-                    <p>Identidad visual impactante y diseño corporativo.</p>
-                    <span class="card-link">Explorar →</span>
-                </a>
+        </section>
+
+        <!-- ==================== SOLUCIÓN SECTION ==================== -->
+        <section class="solution-section" id="solucion">
+            <div class="solution-container reveal">
+                <div class="section-badge">La Solución</div>
+                <h2 class="section-title">Construimos <span class="text-accent">sistemas propios</span> que trabajan por ti</h2>
+                <p class="section-subtitle" style="max-width:700px; margin: 0 auto 3rem;">
+                    No vendemos licencias ni dependencias. Creamos herramientas tuyas, diseñadas 
+                    específicamente para tu operación, con soporte incluido.
+                </p>
+                <div class="solution-grid">
+                    <div class="solution-card reveal">
+                        <div class="solution-number">01</div>
+                        <div class="solution-content">
+                            <h4>Diagnóstico profundo</h4>
+                            <p>Analizamos tu negocio, identificamos problemas reales y proponemos soluciones medibles.</p>
+                        </div>
+                    </div>
+                    <div class="solution-card reveal">
+                        <div class="solution-number">02</div>
+                        <div class="solution-content">
+                            <h4>Desarrollo a medida</h4>
+                            <p>Construimos software propio: web, CRM, automatizaciones. Todo hecho para tu empresa.</p>
+                        </div>
+                    </div>
+                    <div class="solution-card reveal">
+                        <div class="solution-number">03</div>
+                        <div class="solution-content">
+                            <h4>Integración inteligente</h4>
+                            <p>Conectamos todos tus procesos con IA y automatizaciones para eliminar trabajo manual.</p>
+                        </div>
+                    </div>
+                    <div class="solution-card reveal">
+                        <div class="solution-number">04</div>
+                        <div class="solution-content">
+                            <h4>Acompañamiento real</h4>
+                            <p>No desaparecemos. Capacitamos a tu equipo y damos soporte post-lanzamiento incluido.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== OFERTAS SECTION ==================== -->
+        <section class="offers-section" id="ofertas">
+            <div class="offers-container">
+                <div class="offers-header reveal">
+                    <div class="section-badge">Nuestros Paquetes</div>
+                    <h2 class="section-title">Elige el plan que impulse <span class="text-accent">tu crecimiento</span></h2>
+                    <p class="section-subtitle" style="max-width:650px; margin: 0 auto;">
+                        Cada paquete está diseñado para resolver necesidades específicas. Desde emprendedores hasta empresas consolidadas.
+                    </p>
+                </div>
+
+                <div class="offers-grid">
+                    <!-- Offer 1: Modernización Web -->
+                    <div class="offer-card reveal">
+                        <div class="offer-header">
+                            <div class="offer-icon"><i data-feather="monitor"></i></div>
+                            <h3 class="offer-title">Modernización Web</h3>
+                            <p class="offer-timeline"><i data-feather="clock" style="width:16px;height:16px;"></i> 2-3 semanas</p>
+                        </div>
+                        <div class="offer-body">
+                            <ul class="offer-features">
+                                <li><i data-feather="check" style="width:18px;height:18px;"></i> Auditoría completa</li>
+                                <li><i data-feather="check" style="width:18px;height:18px;"></i> Diseño + desarrollo</li>
+                                <li><i data-feather="check" style="width:18px;height:18px;"></i> Optimización para conversión</li>
+                                <li><i data-feather="check" style="width:18px;height:18px;"></i> SEO básico incluido</li>
+                            </ul>
+                        </div>
+                        <div class="offer-footer">
+                            <a href="contacto.html" class="btn-secondary offer-btn">Conocer más</a>
+                        </div>
+                    </div>
+
+                    <!-- Offer 2: Automatización (FEATURED) -->
+                    <div class="offer-card offer-featured reveal">
+                        <div class="offer-badge-popular">⭐ Más Popular</div>
+                        <div class="offer-header">
+                            <div class="offer-icon"><i data-feather="zap"></i></div>
+                            <h3 class="offer-title">Automatización Operativa</h3>
+                            <p class="offer-timeline"><i data-feather="clock" style="width:16px;height:16px;"></i> 4-6 semanas</p>
+                        </div>
+                        <div class="offer-body">
+                            <ul class="offer-features">
+                                <li><i data-feather="check" style="width:18px;height:18px;"></i> CRM personalizado</li>
+                                <li><i data-feather="check" style="width:18px;height:18px;"></i> 3-5 automatizaciones</li>
+                                <li><i data-feather="check" style="width:18px;height:18px;"></i> Dashboard ejecutivo</li>
+                                <li><i data-feather="check" style="width:18px;height:18px;"></i> Integraciones con IA</li>
+                            </ul>
+                        </div>
+                        <div class="offer-footer">
+                            <a href="contacto.html" class="btn-primary offer-btn">Es para mí</a>
+                        </div>
+                    </div>
+
+                    <!-- Offer 3: Paquete Completo -->
+                    <div class="offer-card reveal">
+                        <div class="offer-header">
+                            <div class="offer-icon"><i data-feather="layers"></i></div>
+                            <h3 class="offer-title">Paquete Completo</h3>
+                            <p class="offer-timeline"><i data-feather="clock" style="width:16px;height:16px;"></i> 8-10 semanas</p>
+                        </div>
+                        <div class="offer-body">
+                            <ul class="offer-features">
+                                <li><i data-feather="check" style="width:18px;height:18px;"></i> Web + CRM + Automatizaciones</li>
+                                <li><i data-feather="check" style="width:18px;height:18px;"></i> Integraciones avanzadas</li>
+                                <li><i data-feather="check" style="width:18px;height:18px;"></i> Capacitación completa</li>
+                                <li><i data-feather="check" style="width:18px;height:18px;"></i> Soporte prioritario</li>
+                            </ul>
+                        </div>
+                        <div class="offer-footer">
+                            <a href="contacto.html" class="btn-secondary offer-btn">Conocer más</a>
+                        </div>
+                    </div>
+
+                    <!-- Offer 4: Landing para Emprendimientos -->
+                    <div class="offer-card reveal">
+                        <div class="offer-header">
+                            <div class="offer-icon"><i data-feather="rocket"></i></div>
+                            <h3 class="offer-title">Landing para Emprendimientos</h3>
+                            <p class="offer-timeline"><i data-feather="clock" style="width:16px;height:16px;"></i> 1-2 semanas</p>
+                        </div>
+                        <div class="offer-body">
+                            <ul class="offer-features">
+                                <li><i data-feather="check" style="width:18px;height:18px;"></i> Página web profesional</li>
+                                <li><i data-feather="check" style="width:18px;height:18px;"></i> Muestra tus servicios/productos</li>
+                                <li><i data-feather="check" style="width:18px;height:18px;"></i> Complemento para redes sociales</li>
+                                <li><i data-feather="check" style="width:18px;height:18px;"></i> Diseño responsivo</li>
+                            </ul>
+                        </div>
+                        <div class="offer-footer">
+                            <a href="contacto.html" class="btn-secondary offer-btn">Conocer más</a>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="offers-note reveal">
+                    <i data-feather="shield" style="width:18px;height:18px; vertical-align:middle;"></i>
+                    Todos los paquetes incluyen <strong>30-60 días de soporte</strong> post-lanzamiento.
+                </p>
+            </div>
+        </section>
+
+        <!-- ==================== CTA FINAL ==================== -->
+        <section class="cta-final-section">
+            <div class="cta-final-container reveal">
+                <h2 class="cta-final-title">¿Listo para transformar tu negocio?</h2>
+                <p class="cta-final-subtitle">Agendar una llamada gratuita de 30 minutos. Sin compromiso.</p>
+                <a href="contacto.html" class="btn-primary btn-large">Agendar ahora</a>
+                <div class="cta-final-links">
+                    <a href="herramientas.html">O explorar nuestro diagnóstico rápido →</a>
+                </div>
             </div>
         </section>
     </main>

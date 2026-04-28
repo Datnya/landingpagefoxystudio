@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foxy Studio | Herramientas Gratuitas - Diagnóstico Web y Operativo</title>
+    <meta name="description" content="Diagnostica gratis el estado de tu web y procesos operativos. Responde 7 preguntas y recibe un análisis personalizado. También analiza tu web con IA.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/style.css">
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body class="page-herramientas">
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="navbar-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="logo%20transparente.png" alt="Foxy Studio Logo" class="logo-img">
+                </a>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="nosotros.html" class="nav-link">Nosotros</a>
+                <a href="servicios.html" class="nav-link">Servicios</a>
+                <a href="herramientas.html" class="nav-link active-link">Herramientas Gratuitas</a>
+                <a href="contacto.html" class="nav-link">Contacto</a>
+            </nav>
+            <div class="nav-actions">
+                <div class="nav-socials">
+                    <a href="https://www.instagram.com/foxystudio.digital/?hl=es" target="_blank"><i data-feather="instagram"></i></a>
+                    <a href="#" target="_blank"><i data-feather="facebook"></i></a>
+                    <a href="#" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path><path d="M15 8a4 4 0 1 0 0-8"></path></svg></a>
+                </div>
+                <a href="contacto.html" class="btn-primary">Empezar Proyecto</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+                <i data-feather="menu"></i>
+            </button>
+        </div>
+        <div class="mobile-nav" id="mobileNav">
+            <a href="index.html" class="mobile-nav-link">Inicio</a>
+            <a href="nosotros.html" class="mobile-nav-link">Nosotros</a>
+            <a href="servicios.html" class="mobile-nav-link">Servicios</a>
+            <a href="herramientas.html" class="mobile-nav-link active-link">Herramientas Gratuitas</a>
+            <a href="contacto.html" class="mobile-nav-link">Contacto</a>
+            <a href="contacto.html" class="btn-primary" style="margin-top:1rem;">Empezar Proyecto</a>
+        </div>
+    </header>
+
+    <main class="page-top-padding">
+        <!-- ==================== TOOLS HERO ==================== -->
+        <section class="tools-hero">
+            <div class="tools-hero-container reveal">
+                <div class="section-badge">Herramientas Gratuitas</div>
+                <h1 class="hero-title" style="font-size: clamp(2rem, 3.5vw, 3.5rem); text-align:center;">
+                    Herramientas diseñadas para <span class="text-accent">impulsar tu negocio</span>
+                </h1>
+                <p class="section-subtitle" style="text-align:center; max-width:650px; margin:0 auto;">
+                    Accede a nuestras herramientas de diagnóstico sin costo. Solo necesitas registrarte una vez.
+                </p>
+            </div>
+        </section>
+
+        <!-- ==================== REGISTRATION GATE ==================== -->
+        <section class="registration-gate" id="registrationGate">
+            <div class="registration-container reveal">
+                <div class="registration-card">
+                    <div class="registration-icon">
+                        <i data-feather="user-plus" style="width:48px;height:48px;"></i>
+                    </div>
+                    <h2>Regístrate para acceder</h2>
+                    <p class="text-muted" style="margin-bottom:2rem;">Completa este formulario rápido y accede a todas nuestras herramientas gratuitas.</p>
+                    
+                    <form id="toolsRegistrationForm" class="tools-reg-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="regName">Nombre y Apellido *</label>
+                                <input type="text" id="regName" placeholder="Ej. Juan Pérez" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="regCompany">Nombre de tu Empresa *</label>
+                                <input type="text" id="regCompany" placeholder="Ej. Mi Empresa S.A.C." required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="regEmail">Correo Electrónico *</label>
+                            <input type="email" id="regEmail" placeholder="tu@empresa.com" required>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="regNewsletter">
+                                <span class="checkmark"></span>
+                                <span>Acepto recibir novedades y promociones de Foxy Studio</span>
+                            </label>
+                        </div>
+                        <button type="submit" class="btn-primary w-full" style="padding:1rem; font-size:1.05rem;">
+                            <i data-feather="unlock" style="width:18px;height:18px; vertical-align:middle; margin-right:8px;"></i>
+                            Acceder a las herramientas
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== TOOLS CONTENT (hidden until registration) ==================== -->
+        <div id="toolsContent" class="tools-content" style="display:none;">
+
+            <!-- ========== TOOL 1: DIAGNOSTIC QUIZ ========== -->
+            <section class="diagnostic-section" id="diagnosticSection">
+                <div class="diagnostic-container">
+                    <div class="diagnostic-header reveal">
+                        <div class="diagnostic-icon-wrap">
+                            <i data-feather="clipboard" style="width:40px;height:40px;"></i>
+                        </div>
+                        <h2 class="section-title">Diagnóstico rápido: <span class="text-accent">¿Qué le falta a tu web y procesos?</span></h2>
+                        <p class="section-subtitle" style="max-width:650px; margin:0 auto 2rem;">
+                            Responde 7 preguntas (2 minutos). Recibe un análisis 
+                            personalizado de qué está funcionando, qué no, y qué podrías mejorar.
+                        </p>
+                        <button id="startDiagnostic" class="btn-primary btn-large">
+                            <i data-feather="play" style="width:20px;height:20px; vertical-align:middle; margin-right:8px;"></i>
+                            Iniciar diagnóstico
+                        </button>
+                    </div>
+
+                    <!-- Quiz Container -->
+                    <div id="quizContainer" class="quiz-container" style="display:none;">
+                        <div class="quiz-progress">
+                            <div class="quiz-progress-bar" id="quizProgressBar"></div>
+                        </div>
+                        <div class="quiz-progress-text" id="quizProgressText">Pregunta 1 de 7</div>
+                        
+                        <div id="quizQuestion" class="quiz-question"></div>
+                        <div id="quizOptions" class="quiz-options"></div>
+                        
+                        <div class="quiz-nav">
+                            <button id="quizPrev" class="btn-secondary" style="display:none;">
+                                <i data-feather="arrow-left" style="width:16px;height:16px; vertical-align:middle;"></i> Anterior
+                            </button>
+                            <button id="quizNext" class="btn-primary" style="display:none;">
+                                Siguiente <i data-feather="arrow-right" style="width:16px;height:16px; vertical-align:middle;"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Results Container -->
+                    <div id="quizResults" class="quiz-results" style="display:none;"></div>
+                </div>
+            </section>
+
+            <!-- ========== TOOL 2: AI WEB ANALYSIS ========== -->
+            <section class="ai-analysis-section" id="aiAnalysis">
+                <div class="ai-analysis-container">
+                    <div class="ai-analysis-header reveal">
+                        <div class="diagnostic-icon-wrap">
+                            <i data-feather="search" style="width:40px;height:40px;"></i>
+                        </div>
+                        <h2 class="section-title">Análisis con IA: <span class="text-accent">¿Qué le falta a tu presencia digital?</span></h2>
+                        <p class="section-subtitle" style="max-width:650px; margin:0 auto 2rem;">
+                            Pega el link de tu página web o tu perfil de Instagram y nuestra IA 
+                            generará un diagnóstico rápido con al menos 10 puntos de mejora.
+                        </p>
+                    </div>
+
+                    <div class="ai-input-card reveal">
+                        <div class="form-group">
+                            <label for="aiUrl">URL de tu página web o Instagram</label>
+                            <div class="ai-input-row">
+                                <input type="url" id="aiUrl" placeholder="https://tu-pagina.com o https://instagram.com/tu-perfil">
+                                <button id="aiAnalyzeBtn" class="btn-primary">
+                                    <i data-feather="zap" style="width:18px;height:18px; vertical-align:middle; margin-right:6px;"></i>
+                                    Analizar
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- AI Loading State -->
+                        <div id="aiLoading" class="ai-loading" style="display:none;">
+                            <div class="ai-spinner"></div>
+                            <p>Nuestra IA está analizando tu presencia digital...</p>
+                        </div>
+
+                        <!-- AI Results -->
+                        <div id="aiResults" class="ai-results" style="display:none;"></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ==================== CTA FINAL ==================== -->
+        <section class="cta-final-section">
+            <div class="cta-final-container reveal">
+                <h2 class="cta-final-title">¿Listo para transformar tu negocio?</h2>
+                <p class="cta-final-subtitle">Agendar una llamada gratuita de 30 minutos. Sin compromiso.</p>
+                <a href="contacto.html" class="btn-primary btn-large">Agendar ahora</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="logo%20transparente.png" alt="Foxy Studio Logo">
+            </div>
+            <div class="footer-contact-info" style="color: var(--color-text-muted); text-align: center;">
+                <p>contacto.foxystudio@gmail.com | +51 912424331</p>
+                <p>&copy; <span id="year"></span> Foxy Studio. Todos los derechos reservados.</p>
+            </div>
+            <div class="social-links">
+                <a href="https://www.instagram.com/foxystudio.digital/?hl=es" target="_blank">Instagram</a>
+                <a href="#!">Facebook</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="src/main.js"></script>
+    <script>
+      feather.replace();
+    </script>
+</body>
+</html>

@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foxy Studio | Sobre Nosotros</title>
+    <meta name="description" content="Conoce nuestro equipo, metodología de trabajo y las herramientas de élite que usamos para transformar tu negocio.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="src/style.css">
     <script src="https://unpkg.com/feather-icons"></script>
 </head>
@@ -23,6 +24,7 @@
                 <a href="index.html" class="nav-link">Inicio</a>
                 <a href="nosotros.html" class="nav-link active-link">Nosotros</a>
                 <a href="servicios.html" class="nav-link">Servicios</a>
+                <a href="herramientas.html" class="nav-link">Herramientas Gratuitas</a>
                 <a href="contacto.html" class="nav-link">Contacto</a>
             </nav>
             <div class="nav-actions">
@@ -33,6 +35,17 @@
                 </div>
                 <a href="contacto.html" class="btn-primary">Empezar Proyecto</a>
             </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+                <i data-feather="menu"></i>
+            </button>
+        </div>
+        <div class="mobile-nav" id="mobileNav">
+            <a href="index.html" class="mobile-nav-link">Inicio</a>
+            <a href="nosotros.html" class="mobile-nav-link active-link">Nosotros</a>
+            <a href="servicios.html" class="mobile-nav-link">Servicios</a>
+            <a href="herramientas.html" class="mobile-nav-link">Herramientas Gratuitas</a>
+            <a href="contacto.html" class="mobile-nav-link">Contacto</a>
+            <a href="contacto.html" class="btn-primary" style="margin-top:1rem;">Empezar Proyecto</a>
         </div>
     </header>
 
@@ -61,7 +74,145 @@
             </div>
         </section>
 
-        <!-- Team Section -->
+        <!-- ==================== METODOLOGÍA DE TRABAJO ==================== -->
+        <section class="methodology-section" id="metodologia">
+            <div class="methodology-container">
+                <div class="methodology-header reveal">
+                    <div class="section-badge">Cómo Trabajamos</div>
+                    <h2 class="section-title">Un proceso diseñado para que <span class="text-accent">entiendas cada paso</span></h2>
+                </div>
+
+                <div class="timeline">
+                    <!-- Stage 1 -->
+                    <div class="timeline-item reveal">
+                        <div class="timeline-marker">
+                            <div class="timeline-dot">
+                                <i data-feather="message-circle" style="width:20px;height:20px;"></i>
+                            </div>
+                            <div class="timeline-line"></div>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-badge">Semana 0</div>
+                            <h3>Asesoría Inicial</h3>
+                            <p>Conocemos tu negocio, identificamos problemas y fijamos expectativas. Definimos juntos el alcance y los objetivos del proyecto.</p>
+                        </div>
+                    </div>
+
+                    <!-- Stage 2 -->
+                    <div class="timeline-item reveal">
+                        <div class="timeline-marker">
+                            <div class="timeline-dot">
+                                <i data-feather="code" style="width:20px;height:20px;"></i>
+                            </div>
+                            <div class="timeline-line"></div>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-badge">Semanas 1-8</div>
+                            <h3>Desarrollo Iterativo</h3>
+                            <p>Construimos en sprints. Ves avance cada semana. Cambios según necesites. Sin sorpresas al final del proyecto.</p>
+                        </div>
+                    </div>
+
+                    <!-- Stage 3 -->
+                    <div class="timeline-item reveal">
+                        <div class="timeline-marker">
+                            <div class="timeline-dot">
+                                <i data-feather="check-square" style="width:20px;height:20px;"></i>
+                            </div>
+                            <div class="timeline-line"></div>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-badge">Semana 8</div>
+                            <h3>Evaluación</h3>
+                            <p>Pruebas exhaustivas, ajustes finales y capacitación del equipo. Nos aseguramos de que todo funcione perfecto.</p>
+                        </div>
+                    </div>
+
+                    <!-- Stage 4 -->
+                    <div class="timeline-item reveal">
+                        <div class="timeline-marker">
+                            <div class="timeline-dot">
+                                <i data-feather="send" style="width:20px;height:20px;"></i>
+                            </div>
+                            <div class="timeline-line"></div>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-badge">Semana 9</div>
+                            <h3>Lanzamiento</h3>
+                            <p>Tu sistema está listo. Tu equipo sabe usarlo. Inicia el soporte post-lanzamiento.</p>
+                        </div>
+                    </div>
+
+                    <!-- Stage 5 -->
+                    <div class="timeline-item reveal">
+                        <div class="timeline-marker">
+                            <div class="timeline-dot">
+                                <i data-feather="heart" style="width:20px;height:20px;"></i>
+                            </div>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-badge">30-60 días incluidos</div>
+                            <h3>Soporte</h3>
+                            <p>Acompañamiento continuo, ajustes menores y resolución de dudas. Estamos contigo después de entregar.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="methodology-quote reveal">
+                    <i data-feather="message-square" style="width:24px;height:24px; color: var(--color-accent);"></i>
+                    <p>"No desaparecemos después de entregar. Queremos que uses bien lo que construimos."</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== TECH STACK ==================== -->
+        <section class="tech-stack-section" id="stack">
+            <div class="tech-stack-container">
+                <div class="tech-stack-header reveal">
+                    <div class="section-badge">Tecnología</div>
+                    <h2 class="section-title">Construido con herramientas <span class="text-accent">de élite</span></h2>
+                    <p class="section-subtitle" style="max-width:700px; margin: 0 auto;">
+                        Usamos el stack más moderno disponible. Eso significa: 
+                        seguridad, velocidad, escalabilidad. Tu sistema puede crecer 
+                        sin limitaciones técnicas.
+                    </p>
+                </div>
+
+                <div class="tech-logos-grid reveal">
+                    <div class="tech-logo-card">
+                        <svg viewBox="0 0 180 180" class="tech-svg"><circle cx="90" cy="90" r="70" fill="none" stroke="var(--color-accent)" stroke-width="3"/><text x="90" y="95" text-anchor="middle" fill="white" font-size="16" font-family="Manrope, sans-serif" font-weight="600">Next.js</text></svg>
+                        <span>Next.js</span>
+                    </div>
+                    <div class="tech-logo-card">
+                        <svg viewBox="0 0 180 180" class="tech-svg"><rect x="30" y="30" width="120" height="120" rx="20" fill="none" stroke="#3ECF8E" stroke-width="3"/><text x="90" y="95" text-anchor="middle" fill="white" font-size="14" font-family="Manrope, sans-serif" font-weight="600">Supabase</text></svg>
+                        <span>Supabase</span>
+                    </div>
+                    <div class="tech-logo-card">
+                        <svg viewBox="0 0 180 180" class="tech-svg"><polygon points="90,20 160,155 20,155" fill="none" stroke="white" stroke-width="3"/><text x="90" y="120" text-anchor="middle" fill="white" font-size="16" font-family="Manrope, sans-serif" font-weight="600">Vercel</text></svg>
+                        <span>Vercel</span>
+                    </div>
+                    <div class="tech-logo-card">
+                        <svg viewBox="0 0 180 180" class="tech-svg"><circle cx="90" cy="90" r="70" fill="none" stroke="#61DAFB" stroke-width="3"/><text x="90" y="95" text-anchor="middle" fill="white" font-size="16" font-family="Manrope, sans-serif" font-weight="600">React</text></svg>
+                        <span>React</span>
+                    </div>
+                    <div class="tech-logo-card">
+                        <svg viewBox="0 0 180 180" class="tech-svg"><rect x="30" y="30" width="120" height="120" rx="20" fill="none" stroke="#3178C6" stroke-width="3"/><text x="90" y="95" text-anchor="middle" fill="white" font-size="11" font-family="Manrope, sans-serif" font-weight="600">TypeScript</text></svg>
+                        <span>TypeScript</span>
+                    </div>
+                    <div class="tech-logo-card">
+                        <svg viewBox="0 0 180 180" class="tech-svg"><circle cx="90" cy="90" r="70" fill="none" stroke="#FF6F00" stroke-width="3"/><text x="90" y="95" text-anchor="middle" fill="white" font-size="10" font-family="Manrope, sans-serif" font-weight="600">TensorFlow</text></svg>
+                        <span>IA / ML</span>
+                    </div>
+                </div>
+
+                <p class="tech-note reveal">
+                    <i data-feather="tool" style="width:16px;height:16px; vertical-align:middle;"></i>
+                    Abiertos a nuevas herramientas según lo que necesites.
+                </p>
+            </div>
+        </section>
+
+        <!-- ==================== TEAM SECTION ==================== -->
         <section class="team-section" style="padding: 4rem 5% 8rem 5%; max-width: 1200px; margin: 0 auto;">
             <div class="section-badge reveal" style="margin-bottom: 2rem;">El Talento</div>
             <h2 class="section-title reveal">Nuestro Equipo de Trabajo</h2>
@@ -92,6 +243,18 @@
                     <h4>Cargando Nombre</h4>
                     <p class="team-role text-accent">Cargo / Especialidad</p>
                     <p class="text-muted">Trayectoria, experiencia y aporte principal al equipo.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== CTA FINAL ==================== -->
+        <section class="cta-final-section">
+            <div class="cta-final-container reveal">
+                <h2 class="cta-final-title">¿Listo para transformar tu negocio?</h2>
+                <p class="cta-final-subtitle">Agendar una llamada gratuita de 30 minutos. Sin compromiso.</p>
+                <a href="contacto.html" class="btn-primary btn-large">Agendar ahora</a>
+                <div class="cta-final-links">
+                    <a href="herramientas.html">O explorar nuestro diagnóstico rápido →</a>
                 </div>
             </div>
         </section>
