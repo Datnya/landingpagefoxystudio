@@ -134,6 +134,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const pendingActionInput = document.getElementById('pendingAction');
 
     // Funciones Helper para Modal
+    let hasRegisteredForTools = false;
+
     function showRegModal(actionName) {
         if(regModal) {
             regModal.style.display = 'flex';
@@ -173,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .then(response => response.json())
             .then(data => {
-                localStorage.setItem('foxyToolsRegistered', 'true');
+                hasRegisteredForTools = true;
                 regModal.style.display = 'none';
                 btn.innerHTML = originalText;
                 
@@ -291,7 +293,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if(startDiagBtn) {
         startDiagBtn.addEventListener('click', () => {
-            if(localStorage.getItem('foxyToolsRegistered') !== 'true') {
+            if(!hasRegisteredForTools) {
                 showRegModal('startQuiz');
                 return;
             }
@@ -425,7 +427,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if(aiAnalyzeBtn) {
         aiAnalyzeBtn.addEventListener('click', () => {
-            if(localStorage.getItem('foxyToolsRegistered') !== 'true') {
+            if(!hasRegisteredForTools) {
                 showRegModal('startAI');
                 return;
             }
