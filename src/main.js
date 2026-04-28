@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Simple Form Validation & Fake Submit
+    // Simple Form Validation & Fake Submit -> Real FormSubmit AJAX
     const form = document.getElementById('contactForm');
     const statusDiv = document.getElementById('formStatus');
 
@@ -60,21 +60,42 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.textContent = 'Enviando...';
             btn.disabled = true;
 
-            // Simulate API call
-            setTimeout(() => {
+            const data = {
+                nombre: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                servicio: document.getElementById('service').value,
+                mensaje: document.getElementById('message').value,
+                _subject: "Solicitud de Servicio - Foxy Studio"
+            };
+
+            fetch("https://formsubmit.co/ajax/consultas@foxystudio.com", {
+                method: "POST",
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
                 btn.textContent = originalText;
                 btn.disabled = false;
                 form.reset();
                 
-                statusDiv.textContent = '¡Mensaje enviado con éxito! Nos pondremos en contacto prono.';
+                statusDiv.textContent = '¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.';
                 statusDiv.classList.add('success-msg');
                 
-                // Clear message after 4 seconds
                 setTimeout(() => {
                     statusDiv.textContent = '';
                     statusDiv.classList.remove('success-msg');
                 }, 4000);
-            }, 1500);
+            })
+            .catch(error => {
+                console.log(error);
+                btn.textContent = originalText;
+                btn.disabled = false;
+                statusDiv.textContent = 'Ocurrió un error. Por favor intenta nuevamente.';
+            });
         });
     }
 
@@ -108,35 +129,67 @@ document.addEventListener('DOMContentLoaded', () => {
     // HERRAMIENTAS GRATUITAS LOGIC
     // ==========================================
     const toolsRegForm = document.getElementById('toolsRegistrationForm');
-    const regGate = document.getElementById('registrationGate');
-    const toolsContent = document.getElementById('toolsContent');
+    const regModal = document.getElementById('registrationModal');
+    const closeRegModal = document.getElementById('closeRegModal');
+    const pendingActionInput = document.getElementById('pendingAction');
+
+    // Funciones Helper para Modal
+    function showRegModal(actionName) {
+        if(regModal) {
+            regModal.style.display = 'flex';
+            if(pendingActionInput) pendingActionInput.value = actionName;
+        }
+    }
+    
+    if(closeRegModal) {
+        closeRegModal.addEventListener('click', () => {
+            regModal.style.display = 'none';
+        });
+    }
 
     if(toolsRegForm) {
-        // Check if already registered
-        if(localStorage.getItem('foxyToolsRegistered') === 'true') {
-            if(regGate) regGate.style.display = 'none';
-            if(toolsContent) toolsContent.style.display = 'block';
-        }
-
         toolsRegForm.addEventListener('submit', (e) => {
             e.preventDefault();
             const btn = toolsRegForm.querySelector('button');
             const originalText = btn.innerHTML;
-            btn.innerHTML = '<i data-feather="loader" class="spin" style="width:18px;height:18px;vertical-align:middle;"></i> Accediendo...';
+            btn.innerHTML = '<i data-feather="loader" class="spin" style="width:18px;height:18px;vertical-align:middle;"></i> Desbloqueando...';
             feather.replace();
-            
-            setTimeout(() => {
+
+            const data = {
+                nombre: document.getElementById('regName').value,
+                empresa: document.getElementById('regCompany').value,
+                email: document.getElementById('regEmail').value,
+                novedades: document.getElementById('regNewsletter').checked ? 'Si' : 'No',
+                _subject: "Nuevo usuario de herramienta gratuita"
+            };
+
+            fetch("https://formsubmit.co/ajax/consultas@foxystudio.com", {
+                method: "POST",
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
                 localStorage.setItem('foxyToolsRegistered', 'true');
-                if(regGate) regGate.style.display = 'none';
-                if(toolsContent) {
-                    toolsContent.style.display = 'block';
-                    // Scroll to tools
-                    window.scrollTo({
-                        top: toolsContent.offsetTop - 100,
-                        behavior: 'smooth'
-                    });
+                regModal.style.display = 'none';
+                btn.innerHTML = originalText;
+                
+                // Continue with the pending action
+                const pendingAction = pendingActionInput.value;
+                if(pendingAction === 'startQuiz') {
+                    document.getElementById('startDiagnostic').click();
+                } else if(pendingAction === 'startAI') {
+                    document.getElementById('aiAnalyzeBtn').click();
                 }
-            }, 1500);
+            })
+            .catch(error => {
+                console.log(error);
+                btn.innerHTML = originalText;
+                alert("Ocurrió un error al enviar el formulario. Intenta nuevamente.");
+            });
         });
     }
 
@@ -238,6 +291,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if(startDiagBtn) {
         startDiagBtn.addEventListener('click', () => {
+            if(localStorage.getItem('foxyToolsRegistered') !== 'true') {
+                showRegModal('startQuiz');
+                return;
+            }
             startDiagBtn.parentElement.style.display = 'none';
             quizContainer.style.display = 'block';
             loadQuestion(0);
@@ -368,6 +425,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if(aiAnalyzeBtn) {
         aiAnalyzeBtn.addEventListener('click', () => {
+            if(localStorage.getItem('foxyToolsRegistered') !== 'true') {
+                showRegModal('startAI');
+                return;
+            }
+
             const url = aiUrl.value.trim();
             if(!url) {
                 alert("Por favor ingresa un link válido.");
