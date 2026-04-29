@@ -202,9 +202,21 @@ a {
   display: flex;
   align-items: center;
   position: relative;
-  background-image: linear-gradient(rgba(3, 3, 3, 0.4), rgba(3, 3, 3, 0.85)), url('../fondo%20inicio.jpg');
+  overflow: hidden;
+  --zoom: 1;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: linear-gradient(rgba(3, 3, 3, 0.4), rgba(3, 3, 3, 0.85)), url('../FONDO PARA HOOK V3.jpg');
   background-size: cover;
   background-position: center;
+  transform: scale(var(--zoom));
+  transform-origin: center center;
+  will-change: transform;
+  z-index: 0;
 }
 
 .hero-container {
@@ -1140,34 +1152,66 @@ footer {
 .timeline {
   position: relative;
 }
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 40px;
+  width: 4px;
+  background: rgba(255,255,255,0.1);
+  transform: translateX(-50%);
+  z-index: 0;
+}
 .timeline-item {
   display: flex;
+  align-items: center;
   gap: 2rem;
   margin-bottom: 3rem;
+  position: relative;
+  z-index: 2;
 }
 .timeline-marker {
+  width: 80px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
 }
 .timeline-dot {
-  width: 50px;
-  height: 50px;
-  background: var(--color-bg);
+  width: 80px;
+  height: 80px;
+  background: var(--color-surface);
   border: 2px solid var(--color-accent);
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--color-accent);
+  color: var(--color-text-muted);
   z-index: 2;
+  transition: all 0.4s ease;
+}
+.timeline-dot.active {
+  background: var(--color-accent);
+  color: #fff;
+  box-shadow: 0 0 20px rgba(240, 90, 34, 0.6);
+  border-color: #fff;
 }
 .timeline-line {
-  width: 2px;
-  background: rgba(255,255,255,0.1);
-  flex-grow: 1;
-  margin-top: 10px;
-  margin-bottom: -3rem; /* Connects to next item */
+  display: none;
+}
+.timeline-progress-ball {
+  position: absolute;
+  left: 40px;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  z-index: 1; /* Detrás de los iconos */
+  box-shadow: 0 0 20px #fff, 0 0 40px var(--color-accent);
+  transition: top 0.1s ease-out;
 }
 .timeline-content {
   background: var(--color-bg);
@@ -1299,7 +1343,25 @@ footer {
 
 /* Hero */
 .tools-hero {
-  padding: 6rem 5% 4rem;
+  padding: 8rem 5% 6rem;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.tools-hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: linear-gradient(rgba(3, 3, 3, 0.6), rgba(3, 3, 3, 0.95)), url('../Herramientas digitales.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.tools-hero > * {
+  position: relative;
+  z-index: 1;
 }
 
 /* Registration Gate */
@@ -1499,9 +1561,65 @@ footer {
 }
 .ai-input-card {
   background: var(--color-bg);
-  padding: 3rem;
-  border-radius: 24px;
   border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 20px;
+  padding: 3rem;
+}
+.ai-input-row {
+  display: flex;
+  gap: 1rem;
+}
+.ai-input-row input {
+  flex-grow: 1;
+}
+.ai-loading {
+  text-align: center;
+  margin-top: 3rem;
+}
+.ai-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(240, 90, 34, 0.2);
+  border-top-color: var(--color-accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 1.5rem;
+}
+@keyframes spin { 100% { transform: rotate(360deg); } }
+.ai-results {
+  margin-top: 3rem;
+  padding-top: 3rem;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+.ai-point {
+  background: var(--color-surface);
+  border: 1px solid rgba(240, 90, 34, 0.2);
+  padding: 2rem;
+  border-radius: 16px;
+}
+.ai-point h4 {
+  color: var(--color-accent);
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+/* Ocultar banner de Google Translate */
+.goog-te-banner-frame.skiptranslate, .goog-te-gadget-icon {
+    display: none !important;
+}
+body {
+    top: 0px !important;
+}
+.goog-tooltip {
+    display: none !important;
+}
+.goog-tooltip:hover {
+    display: none !important;
+}
+.goog-text-highlight {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
 }
 .ai-input-row {
   display: flex;
@@ -1520,6 +1638,62 @@ footer {
 .ai-loading {
   text-align: center;
   padding: 3rem 0;
+}
+
+/* =========================================================================
+   WHATSAPP FLOATING BUTTON
+   ========================================================================= */
+.whatsapp-float {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #25D366;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 50px;
+  box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+  z-index: 1000;
+  text-decoration: none;
+  font-weight: 600;
+  font-family: var(--font-heading), sans-serif;
+  animation: pulse-soft 2s infinite;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+  animation: none;
+  color: white;
+}
+
+.whatsapp-float svg {
+  width: 24px;
+  height: 24px;
+}
+
+.whatsapp-float span {
+  font-size: 0.95rem;
+}
+
+@keyframes pulse-soft {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+@media (max-width: 600px) {
+  .whatsapp-float {
+    bottom: 20px;
+    right: 20px;
+    padding: 12px;
+  }
+  .whatsapp-float span {
+    display: none; /* Only show icon on mobile to save space */
+  }
 }
 .ai-spinner {
   width: 50px;

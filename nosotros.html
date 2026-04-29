@@ -52,10 +52,14 @@
     <main class="page-top-padding">
         <!-- About Section -->
         <section class="about">
-            <div class="section-badge reveal">Sobre Foxy Studio</div>
-            <h2 class="section-title reveal">Innovación sin límites.</h2>
-            <div class="about-content">
+            <div class="section-badge reveal" style="text-align: left; margin-bottom: 1rem;">Sobre Foxy Studio</div>
+            <div class="about-content" style="align-items: flex-start;">
                 <div class="about-text reveal">
+                    <h2 class="section-title" style="text-align: left; margin-bottom: 2rem; display: flex; flex-direction: column; line-height: 1.1; font-size: 3.5rem;">
+                        <span>Innovación</span>
+                        <span>sin</span>
+                        <span>límites.</span>
+                    </h2>
                     <p>
                         Nuestra visión es redefinir el ecosistema digital mediante la combinación perfecta entre diseño estético y funcionalidad técnica avanzada. 
                     </p>
@@ -68,8 +72,9 @@
                     <br>
                     <a href="contacto.html" class="btn-primary">Trabajemos Juntos</a>
                 </div>
-                <div class="about-image reveal">
-                    <img src="Imagen%201.png" alt="Foxy Studio Team/Vision" class="showcase-img">
+                <div class="about-image reveal" style="display: grid; grid-template-columns: 1fr; gap: 1.5rem;">
+                    <img src="nueva-imagen-nosotros-1.jpg" alt="Equipo Foxy" class="showcase-img" style="border-radius:20px; width:100%;">
+                    <img src="nueva-imagen-nosotros-2.jpg" alt="Metodología Foxy" class="showcase-img" style="border-radius:20px; width:100%; height: 300px; object-fit: cover; object-position: center 80%;">
                 </div>
             </div>
         </section>
@@ -82,17 +87,17 @@
                     <h2 class="section-title">Un proceso diseñado para que <span class="text-accent">entiendas cada paso</span></h2>
                 </div>
 
-                <div class="timeline">
+                <div class="timeline" id="methodologyTimeline">
+                    <div class="timeline-progress-ball" id="timelineBall"></div>
                     <!-- Stage 1 -->
                     <div class="timeline-item reveal">
                         <div class="timeline-marker">
                             <div class="timeline-dot">
-                                <i data-feather="message-circle" style="width:20px;height:20px;"></i>
+                                <i data-feather="message-circle" style="width:32px;height:32px;"></i>
                             </div>
                             <div class="timeline-line"></div>
                         </div>
                         <div class="timeline-content">
-                            <div class="timeline-badge">Semana 0</div>
                             <h3>Asesoría Inicial</h3>
                             <p>Conocemos tu negocio, identificamos problemas y fijamos expectativas. Definimos juntos el alcance y los objetivos del proyecto.</p>
                         </div>
@@ -102,12 +107,11 @@
                     <div class="timeline-item reveal">
                         <div class="timeline-marker">
                             <div class="timeline-dot">
-                                <i data-feather="code" style="width:20px;height:20px;"></i>
+                                <i data-feather="code" style="width:32px;height:32px;"></i>
                             </div>
                             <div class="timeline-line"></div>
                         </div>
                         <div class="timeline-content">
-                            <div class="timeline-badge">Semanas 1-8</div>
                             <h3>Desarrollo Iterativo</h3>
                             <p>Construimos en sprints. Ves avance cada semana. Cambios según necesites. Sin sorpresas al final del proyecto.</p>
                         </div>
@@ -117,12 +121,11 @@
                     <div class="timeline-item reveal">
                         <div class="timeline-marker">
                             <div class="timeline-dot">
-                                <i data-feather="check-square" style="width:20px;height:20px;"></i>
+                                <i data-feather="check-square" style="width:32px;height:32px;"></i>
                             </div>
                             <div class="timeline-line"></div>
                         </div>
                         <div class="timeline-content">
-                            <div class="timeline-badge">Semana 8</div>
                             <h3>Evaluación</h3>
                             <p>Pruebas exhaustivas, ajustes finales y capacitación del equipo. Nos aseguramos de que todo funcione perfecto.</p>
                         </div>
@@ -132,12 +135,11 @@
                     <div class="timeline-item reveal">
                         <div class="timeline-marker">
                             <div class="timeline-dot">
-                                <i data-feather="send" style="width:20px;height:20px;"></i>
+                                <i data-feather="send" style="width:32px;height:32px;"></i>
                             </div>
                             <div class="timeline-line"></div>
                         </div>
                         <div class="timeline-content">
-                            <div class="timeline-badge">Semana 9</div>
                             <h3>Lanzamiento</h3>
                             <p>Tu sistema está listo. Tu equipo sabe usarlo. Inicia el soporte post-lanzamiento.</p>
                         </div>
@@ -147,11 +149,10 @@
                     <div class="timeline-item reveal">
                         <div class="timeline-marker">
                             <div class="timeline-dot">
-                                <i data-feather="heart" style="width:20px;height:20px;"></i>
+                                <i data-feather="heart" style="width:32px;height:32px;"></i>
                             </div>
                         </div>
                         <div class="timeline-content">
-                            <div class="timeline-badge">30-60 días incluidos</div>
                             <h3>Soporte</h3>
                             <p>Acompañamiento continuo, ajustes menores y resolución de dudas. Estamos contigo después de entregar.</p>
                         </div>
