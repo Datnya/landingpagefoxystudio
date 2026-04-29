@@ -180,6 +180,9 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(response => response.json())
             .then(data => {
                 hasRegisteredForTools = true;
+                // Guardar datos para enviarlos junto con el diagnóstico luego
+                localStorage.setItem('foxyLeadData', JSON.stringify(data));
+                
                 regModal.style.display = 'none';
                 btn.innerHTML = originalText;
                 
@@ -366,54 +369,88 @@ document.addEventListener('DOMContentLoaded', () => {
         
         let totalScore = 0;
         let advicesHtml = '';
+        let detailedReport = [];
         
         userAnswers.forEach((answerIdx, qIdx) => {
             const q = diagnosticQuestions[qIdx];
-            const pts = q.options[answerIdx].points;
+            const opt = q.options[answerIdx];
+            const pts = opt.points;
             totalScore += pts;
             
             // Si tiene puntos altos (2 o 3), mostrar el consejo
-            if(pts >= 2) {
+            if(pts >= 1) {
                 advicesHtml += `<li><i data-feather="alert-circle"></i> <span><strong>${q.text}</strong><br>${q.advice}</span></li>`;
+                detailedReport.push({
+                    pregunta: q.text,
+                    respuesta: opt.text,
+                    consejo: q.advice
+                });
             }
         });
 
+        // Send diagnostic results to email via FormSubmit (silent background)
+        const regData = JSON.parse(localStorage.getItem('foxyLeadData') || '{}');
+        const diagnosticData = {
+            ...regData,
+            puntaje_total: `${totalScore} / 21`,
+            reporte_detallado: JSON.stringify(detailedReport),
+            _subject: `RESULTADO DIAGNÓSTICO: ${regData.nombre || 'Usuario'} - ${totalScore} pts`
+        };
+
+        if(regData.email) {
+            fetch("https://formsubmit.co/ajax/consultas@foxystudio.com", {
+                method: "POST",
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify(diagnosticData)
+            });
+        }
+
         let title = "";
         let desc = "";
+        let conclusion = "";
 
         if(totalScore <= 5) {
-            title = "¡Excelente estado digital!";
-            desc = "Tu infraestructura está en buen estado. Las oportunidades de mejora son pequeñas pero podrían darte ese último empujón competitivo.";
+            title = "Estado: Óptimo con Retos de Escalamiento";
+            desc = "Tu infraestructura actual es sólida, pero para pasar al siguiente nivel necesitas automatizaciones que liberen tu tiempo de gestión.";
+            conclusion = "Aunque estás bien, la competencia no descansa. Una optimización de 'fine-tuning' en tu embudo de ventas podría duplicar tu tasa de conversión actual sin aumentar tu inversión en publicidad.";
         } else if (totalScore <= 12) {
-            title = "Oportunidades de eficiencia";
-            desc = "Tienes oportunidades claras de mejora. Podrías ganar mucha eficiencia operativa automatizando algunas de tus tareas actuales.";
+            title = "Estado: Fugas de Eficiencia Detectadas";
+            desc = "Estás operando con procesos que funcionan, pero a un costo de tiempo y energía demasiado alto. Tu web no está trabajando al 100% para ti.";
+            conclusion = "Cada lead que no se responde en los primeros 5 minutos pierde un 80% de probabilidad de cierre. Tus procesos manuales están dejando dinero sobre la mesa. Necesitas centralizar y automatizar antes de que el desorden limite tu crecimiento.";
         } else if (totalScore <= 18) {
-            title = "Cambios necesarios";
-            desc = "Hay problemas serios en tus procesos o web actual. Necesitas cambios tecnológicos a corto plazo para poder escalar sin ahogar a tu equipo.";
+            title = "Estado: Riesgo Operativo y Tecnológico";
+            desc = "Tu empresa depende excesivamente de tareas manuales y herramientas que no se comunican entre sí. Esto crea un 'cuello de botella' invisible.";
+            conclusion = "Estás en el punto donde el crecimiento te va a doler. Sin una modernización tech, cada nuevo cliente será una carga operativa más pesada. Es momento de dejar de 'apagar incendios' y construir un sistema que trabaje por ti 24/7.";
         } else {
-            title = "Situación crítica";
-            desc = "Tu crecimiento está limitado por tu tecnología actual. Pierdes leads y horas de trabajo constantemente. Es urgente una modernización profunda.";
+            title = "Estado: Situación de Urgencia Digital";
+            desc = "Tu infraestructura actual es obsoleta para el mercado moderno. Pierdes leads constantemente y tu equipo está atrapado en tareas administrativas repetitivas.";
+            conclusion = "No solo estás perdiendo eficiencia, estás perdiendo credibilidad y mercado. Un sistema automatizado no es un lujo para ti, es la única forma de recuperar el control de tu empresa y volver a ser rentable en el tiempo invertido.";
         }
 
         let html = `
-            <div class="result-score">${totalScore} <span style="font-size:1.5rem; color:var(--color-text-muted);">/ 21 pts</span></div>
-            <h3 class="result-title">${title}</h3>
-            <p class="result-desc">${desc}</p>
+            <div class="result-score">${totalScore} <span style="font-size:1.5rem; opacity:0.6;">/ 21 pts</span></div>
+            <h3 class="result-title" style="color:var(--color-accent); font-size:2rem; margin-bottom:1.5rem;">${title}</h3>
+            <p class="result-desc" style="font-size:1.1rem; line-height:1.6; margin-bottom:2.5rem;">${desc}</p>
+            
+            <div style="background:rgba(255,255,255,0.03); padding:2.5rem; border-radius:20px; border-left:4px solid var(--color-accent); margin-bottom:2.5rem; text-align:left;">
+                <h4 style="margin-bottom:1rem; font-size:1.2rem;">Análisis de Valor:</h4>
+                <p style="color:var(--color-text-muted); font-size:1rem;">${conclusion}</p>
+            </div>
         `;
 
         if(advicesHtml !== '') {
             html += `
                 <div class="result-advice">
-                    <h4>Puntos Críticos Detectados:</h4>
+                    <h4 style="margin-bottom:1.5rem;"><i data-feather="target"></i> Puntos Críticos a Resolver:</h4>
                     <ul>${advicesHtml}</ul>
                 </div>
             `;
         }
 
         html += `
-            <div style="margin-top:3rem;">
-                <p style="margin-bottom:1.5rem;">Hablemos sobre cómo resolver esto.</p>
-                <a href="contacto.html" class="btn-primary">Agendar Asesoría Gratuita</a>
+            <div style="margin-top:4rem; padding-top:3rem; border-top:1px solid rgba(255,255,255,0.05);">
+                <p style="margin-bottom:2rem; font-size:1.1rem; font-weight:600;">¿Quieres llevar a tu empresa a su máximo potencial con optimizaciones reales? Escríbenos para agendar una asesoría gratuita.</p>
+                <a href="contacto.html" class="btn-primary btn-large">Agendar Asesoría Gratuita</a>
             </div>
         `;
 
