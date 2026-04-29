@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ciudad: document.getElementById('city').value,
                 servicio: document.getElementById('service').value,
                 mensaje: document.getElementById('message').value,
-                _subject: "Solicitud de Servicio - Foxy Studio"
+                _subject: "Formulario de solicitud - Nuevo usuario"
             };
 
             fetch("https://formsubmit.co/ajax/consultas@foxystudio.com", {
@@ -166,9 +166,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 pais: document.getElementById('regCountry').value,
                 ciudad: document.getElementById('regCity').value,
                 novedades: document.getElementById('regNewsletter').checked ? 'Si' : 'No',
-                _subject: "Nuevo usuario de herramienta gratuita"
+                _subject: "Formulario Herramientas Gratuitas"
             };
 
+            const userData = { ...data };
             fetch("https://formsubmit.co/ajax/consultas@foxystudio.com", {
                 method: "POST",
                 headers: { 
@@ -178,10 +179,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 body: JSON.stringify(data)
             })
             .then(response => response.json())
-            .then(data => {
+            .then(apiResponse => {
                 hasRegisteredForTools = true;
-                // Guardar datos para enviarlos junto con el diagnóstico luego
-                localStorage.setItem('foxyLeadData', JSON.stringify(data));
+                // Guardar los datos del usuario para enviarlos junto con el diagnóstico luego
+                localStorage.setItem('foxyLeadData', JSON.stringify(userData));
                 
                 regModal.style.display = 'none';
                 btn.innerHTML = originalText;
