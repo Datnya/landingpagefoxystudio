@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 _subject: "Formulario de solicitud - Nuevo usuario"
             };
 
-            fetch("https://formsubmit.co/ajax/consultas@foxystudio.com", {
+            fetch("https://formsubmit.co/ajax/contacto.foxystudio@gmail.com", {
                 method: "POST",
                 headers: { 
                     'Content-Type': 'application/json',
@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
             };
 
             const userData = { ...data };
-            fetch("https://formsubmit.co/ajax/consultas@foxystudio.com", {
+            fetch("https://formsubmit.co/ajax/contacto.foxystudio@gmail.com", {
                 method: "POST",
                 headers: { 
                     'Content-Type': 'application/json',
@@ -399,7 +399,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         if(regData.email) {
-            fetch("https://formsubmit.co/ajax/consultas@foxystudio.com", {
+            fetch("https://formsubmit.co/ajax/contacto.foxystudio@gmail.com", {
                 method: "POST",
                 headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
                 body: JSON.stringify(diagnosticData)
